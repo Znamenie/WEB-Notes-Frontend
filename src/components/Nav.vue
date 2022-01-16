@@ -2,56 +2,35 @@
 
 <template>
 	<div class="nav">
-		<div class="nav__item" v-for="item in items" :key="item.id">
+		<div 
+			class="nav__item" 
+			v-for="topic in topics" 
+			:key="topic.id"
+			@click="getTopicsNested(topic.id)"
+		>
 			<div class="nav__item--logo">
-				<img :src=item.url alt="">
+				<img :src="getImgUrl(topic.url)">
 			</div>
-			{{ item.title }}
+			{{ topic.title }}
 		</div>
 	</div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
 	data() {
-		return {
-			items: [
-				{
-					id: 1,
-					url: require('../assets/image/nav/html.svg'),
-					title: 'HTML'
-				},
-				{
-					id: 2,
-					url: require('../assets/image/nav/css.svg'),
-					title: 'CSS'
-				},
-				{
-					id: 3,
-					url: require('../assets/image/nav/js.svg'),
-					title: 'JavaScript'
-				},
-				{
-					id: 4,
-					url: require('../assets/image/nav/fonts.svg'),
-					title: 'Fonts'
-				},
-				{
-					id: 5,
-					url: require('../assets/image/nav/uikit.svg'),
-					title: 'UI/UX'
-				},
-				{
-					id: 6,
-					url: require('../assets/image/nav/ui.svg'),
-					title: 'Sandbox'
-				},
-				{
-					id: 7,
-					url: require('../assets/image/nav/webpack.svg'),
-					title: 'Webpack'
-				}
-			]
+		return {}
+	},
+	computed: {
+		...mapState(['topicsNested', 'topics'])
+	},
+	methods: {
+		getImgUrl(imgUrl) {
+			return require(`@/assets/img/nav/${imgUrl}.svg`);
+		},
+		getTopicsNested(topicId) {
+			this.$store.dispatch('GET_TOPICS_NESTED', topicId);
 		}
 	}
 }

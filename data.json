@@ -1,0 +1,157 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "url": "html",
+      "title": "HTML"
+    },
+    {
+      "id": 2,
+      "url": "css",
+      "title": "CSS"
+    },
+    {
+      "id": 3,
+      "url": "js",
+      "title": "JavaScript"
+    },
+    {
+      "id": 4,
+      "url": "fonts",
+      "title": "Fonts"
+    },
+    {
+      "id": 5,
+      "url": "uikit",
+      "title": "UI/UX"
+    },
+    {
+      "id": 6,
+      "url": "ui",
+      "title": "Sandbox"
+    },
+    {
+      "id": 7,
+      "url": "webpack",
+      "title": "Webpack"
+    }
+  ],
+  "topicsNested": [
+    {
+      "id": 1,
+      "name":"HTML",
+      "items": [
+        {
+          "id": 1,
+          "topicTitle": "Инструменты",
+          "topicItems": [
+            {
+              "id": 1,
+              "title": "W3Schools",
+              "description": "Бесплатный образовательный сайт для обучения программированию в Интернете"
+            },
+            {
+              "id": 2,
+              "title": "HTMLBook",
+              "description": "Информация об HTML, CSS, веб-дизайну, графике и созданию сайтов"
+            },
+            {
+              "id": 3,
+              "title": "iHateRegex",
+              "description": "Шпаргалка по regex, которая также объясняет часто используемые выражения так, чтобы вы их..."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topicTitle": "Основное",
+          "topicItems": [
+            {
+              "id": 1,
+              "title": "W3Schools",
+              "description": "Бесплатный образовательный сайт для обучения программированию в Интернете"
+            },
+            {
+              "id": 2,
+              "title": "HTMLBook",
+              "description": "Информация об HTML, CSS, веб-дизайну, графике и созданию сайтов"
+            },
+            {
+              "id": 3,
+              "title": "iHateRegex",
+              "description": "Шпаргалка по regex, которая также объясняет часто используемые выражения так, чтобы вы их..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name":"CSS",
+      "items": [
+        {
+          "id": 1,
+          "topicTitle": "Инструменты",
+          "topicItems": [
+            {
+              "id": 1,
+              "title": "W3Schools",
+              "description": "Бесплатный образовательный сайт для обучения программированию в Интернете"
+            },
+            {
+              "id": 2,
+              "title": "HTMLBook",
+              "description": "Информация об HTML, CSS, веб-дизайну, графике и созданию сайтов"
+            },
+            {
+              "id": 3,
+              "title": "iHateRegex",
+              "description": "Шпаргалка по regex, которая также объясняет часто используемые выражения так, чтобы вы их..."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "topicTitle": "Основное",
+          "topicItems": [
+            {
+              "id": 1,
+              "title": "W3Schools",
+              "description": "Бесплатный образовательный сайт для обучения программированию в Интернете"
+            },
+            {
+              "id": 2,
+              "title": "HTMLBook",
+              "description": "Информация об HTML, CSS, веб-дизайну, графике и созданию сайтов"
+            },
+            {
+              "id": 3,
+              "title": "iHateRegex",
+              "description": "Шпаргалка по regex, которая также объясняет часто используемые выражения так, чтобы вы их..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "1": "",
+      "id": 3
+    },
+    {
+      "1": "",
+      "id": 4
+    },
+    {
+      "param": 1,
+      "id": 5
+    },
+    {
+      "param": 1,
+      "id": 6
+    },
+    {
+      "1": "",
+      "id": 7
+    }
+  ]
+}

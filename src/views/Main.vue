@@ -4,84 +4,29 @@
 	<div class="main">
 		<Nav></Nav>
 		<div class="main__content">
-			<div class="main__content-caption" v-for="topic in topics" :key="topic.id">
-				{{topic.caption}}
+			<div class="main__content__header">
+				{{ topicsNested.name }}
 			</div>
-			<div class="main__content-module" v-for="topicNested in topicNesteds" :key="topicNested.id">
-				<div class="main__content-module--title">
-					{{ topicNested.topicTitle }}
-				</div>
-			</div>
+			<MainModule ></MainModule>
 		</div>
 	</div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Nav from '@/components/Nav.vue'
+import MainModule from '@/components/MainModule.vue'
 export default {
-	components: { Nav },
+	components: { Nav, MainModule },
 	data() {
-		return {
-			topics: [
-				{
-					id: 1,
-					caption: 'HTML',
-				},
-				{
-					id: 2,
-					caption: 'CSS',
-				},
-				{
-					id: 3,
-					caption: 'JavaScript',
-				},
-
-			],
-			topicNesteds: [
-				{
-					id: 1,
-					topicTitle: 'Инструменты',
-					topicItems: [
-						{
-							id: 1,
-							title: 'W3Schools',
-							description: 'Бесплатный образовательный сайт для обучения программированию в Интернете'
-						},
-						{
-							id: 2,
-							title: 'HTMLBook',
-							description: 'Информация об HTML, CSS, веб-дизайну, графике и созданию сайтов'
-						},
-						{
-							id: 3,
-							title: 'iHateRegex',
-							description: 'Шпаргалка по regex, которая также объясняет часто используемые выражения так, чтобы вы их...'
-						}
-					]
-				},
-				{
-					id: 2,
-					topicTitle: 'Основное',
-					topicItems: [
-						{
-							id: 1,
-							title: 'W3Schools',
-							description: 'Бесплатный образовательный сайт для обучения программированию в Интернете'
-						},
-						{
-							id: 2,
-							title: 'HTMLBook',
-							description: 'Информация об HTML, CSS, веб-дизайну, графике и созданию сайтов'
-						},
-						{
-							id: 3,
-							title: 'iHateRegex',
-							description: 'Шпаргалка по regex, которая также объясняет часто используемые выражения так, чтобы вы их...'
-						}
-					]
-				}
-			]
-		}
+		return {}
+	},
+	computed: {
+		...mapState(['topicsNested'])
+	},
+	created() {
+		this.$store.dispatch('GET_TOPICS');
+		this.$store.dispatch('GET_TOPICS_NESTED', 1);
 	}
 }
 </script>
@@ -97,13 +42,25 @@ export default {
 	
 	&__content {
 		grid-area: content;
+		color: red;
+		background: #283046;
+		padding: 40px;
+
+		&__header {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			font-size: 160px;
+			color: rgba(35, 43, 63, 1);
+			font-weight: 700;
+		}
 	}
 	
-	&__content-caption {
+	.content-caption {
 		color: #000000;
 	}
 	
-	&__content-module {
+	.content-module {
 		
 		&--title {
 			color: red;

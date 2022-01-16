@@ -3,7 +3,7 @@
 <template>
 	<div class="header">
 		<div class="header__logo">
-			<img src="@/assets/image/header-logo.svg" alt="Web-notes" />
+			<img src="../assets/img/header-logo.svg" alt="Web-notes" />
 			<h1>WEB-NOTES</h1>
 		</div>
 		<div class="header__links">
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {}
 </script>
 
@@ -21,7 +22,7 @@ export default {}
 .header {
 	display: flex;
 	align-items: center;
-	background: url('../assets/image/header-bg.png') no-repeat;
+	background: url('../assets/img/header-bg.png') no-repeat;
 	background-size: cover;
 	padding: 0 30px;
 	&__logo {
