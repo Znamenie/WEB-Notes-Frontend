@@ -3,7 +3,9 @@
 <template>
 	<div class="main">
 		<Nav></Nav>
+		<MySpinner :state="isLoading" v-if="!isLoading"></MySpinner>
 		<div class="main__content">
+			
 			<div class="main__content__header">
 				{{ topicsNested.name }}
 			</div>
@@ -16,23 +18,31 @@
 import { mapState } from 'vuex'
 import Nav from '@/components/Nav.vue'
 import MainModule from '@/components/MainModule.vue'
+import MySpinner from '@/components/MySpinner.vue'
 export default {
-	components: { Nav, MainModule },
+	components: { Nav, MainModule, MySpinner },
 	data() {
-		return {}
+		return {
+			isLoading: false
+		}
 	},
 	computed: {
 		...mapState(['topicsNested'])
 	},
 	created() {
+		this.isLoading = true;
 		this.$store.dispatch('GET_TOPICS');
-		this.$store.dispatch('GET_TOPICS_NESTED', 1);
+		this.$store.dispatch('GET_TOPICS_NESTED', 1)
+			.finally(() => {
+				this.isLoading = false;
+			});
 	}
 }
 </script>
 
 <style lang="scss" scoped>
 .main {
+	position: relative;
 	display: grid;
 	grid-template-columns: 120px 1fr;
 	height: 100%;
@@ -41,6 +51,7 @@ export default {
 	height: calc(100vh - 70px);
 	
 	&__content {
+		position: relative;
 		grid-area: content;
 		color: red;
 		background: #283046;
@@ -53,6 +64,7 @@ export default {
 			font-size: 160px;
 			color: rgba(35, 43, 63, 1);
 			font-weight: 700;
+			line-height: 140px;
 		}
 	}
 	

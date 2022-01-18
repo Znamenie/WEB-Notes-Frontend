@@ -6,7 +6,8 @@ import mutations from './mutations';
 export default createStore({
   state: {
     topics: [],
-    topicsNested: []
+    topicsNested: [],
+    stateLoading: false
   },
   mutations,
   actions

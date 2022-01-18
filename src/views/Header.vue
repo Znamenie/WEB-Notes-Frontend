@@ -41,18 +41,45 @@ export default {}
 			color: rgba(198, 211, 231, 1);
 		}
 	}
-	&__links a {
-        padding: 0 20px; 
-		font-family: 'Nunito', sans-serif;
-		font-weight: normal;
-		font-style: normal;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 600;
-        transition: all 0.3s;
-        &:hover {
-            color: rgba(198, 211, 231, 1);
-        }
+	&__links {
+		display: flex;
+
+		a {
+			display: block;
+			padding: 10px 10px 5px 10px; 
+			font-family: 'Nunito-Bold';
+			text-decoration: none;
+			font-size: 16px;
+			text-transform: uppercase;
+			position:relative;
+			z-index: 1;
+			transition: all .3s;
+			margin: 0 15px;
+			color: #C6D3E7;
+			
+
+			&:hover {
+				color: #FFFFFF;
+			}
+
+			&::after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 0%;
+				content: '.';
+				color: transparent;
+				background: #aaa;
+				height: 2px;
+				transition: all .3s;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+		}
 	}
 }
 </style>

@@ -18,7 +18,10 @@
 
 <script>
 import { mapState } from 'vuex'
+import MySpinner from '@/components/MySpinner.vue'
+
 export default {
+	components: { MySpinner },
 	data() {
 		return {}
 	},
@@ -30,7 +33,11 @@ export default {
 			return require(`@/assets/img/nav/${imgUrl}.svg`);
 		},
 		getTopicsNested(topicId) {
-			this.$store.dispatch('GET_TOPICS_NESTED', topicId);
+			this.$store.dispatch('TOGGLE_ACTIVE', true)
+			this.$store.dispatch('GET_TOPICS_NESTED', topicId)
+				.then(() => {
+					this.$store.dispatch('TOGGLE_ACTIVE', false)
+				})
 		}
 	}
 }
@@ -50,8 +57,9 @@ export default {
 		background: transparent;
 		transition: all 0.3s;
         border-bottom: 1px solid #C6D3E7;
-        font-weight: 400;
+		font-family: 'Nunito-Regular';
         font-size: 16px;
+		color: #C6D3E7;
 		cursor: pointer;
 		&:hover {
 			background: #6ce8e4;
