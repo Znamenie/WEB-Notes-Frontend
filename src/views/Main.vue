@@ -48,7 +48,7 @@ export default {
 	height: 100%;
 	gap: 0px 0px;
 	grid-template-areas: 'nav content';
-	height: calc(100vh - 70px);
+	height: calc(100vh - 80px);
 	
 	&__content {
 		position: relative;

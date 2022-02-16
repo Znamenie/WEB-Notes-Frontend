@@ -39,6 +39,10 @@ export default {
         flex-direction: column;
         width: 100%;
         padding: 50px;
+
+        @media (max-width: 500px) {
+            padding: 10px;
+        }
     }
 
     &__title {
@@ -48,14 +52,22 @@ export default {
         color: #C6D3E7;
         font-weight: 700;
         border-bottom: 2px solid #6CE8E4;
-        padding-left: 30px;
+        padding-left: 10px;
         margin-bottom: 20px;
+
+        @media (max-width: 500px) {
+            font-size: 28px;
+        }
     }
 
     &__content {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         grid-gap: 12px;
+
+        @media (max-width: 400px) {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
     }
 }
 </style>
