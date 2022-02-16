@@ -7,6 +7,7 @@ export default createStore({
   state: {
     topics: [],
     topicsNested: [],
+    helpfulItems: [],
     stateLoading: false
   },
   mutations,

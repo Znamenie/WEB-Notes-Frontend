@@ -2,7 +2,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Main from '@/views/Main'
-import Additional from '@/views/Additional'
+import Helpful from '@/views/Helpful'
 
 const routes = [
 	{
@@ -11,9 +11,9 @@ const routes = [
 		component: Main,
 	},
 	{
-		path: '/additional',
-		name: 'Additional',
-		component: Additional,
+		path: '/helpful',
+		name: 'Helpful',
+		component: Helpful,
 	}
 ]
 

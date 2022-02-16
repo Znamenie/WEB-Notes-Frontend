@@ -6,7 +6,7 @@
 			class="nav__item" 
 			v-for="topic in topics" 
 			:key="topic.id"
-			@click="getTopicsNested(topic.id)"
+			@click="getTopicsNested(topic._id)"
 		>
 			<div class="nav__item--logo">
 				<img :src="getImgUrl(topic.url)">
@@ -47,6 +47,7 @@ export default {
 .nav {
 	grid-area: nav;
 	background-color: #0f1724;
+
 	&__item {
         display: flex;
         align-items: center;
@@ -70,10 +71,15 @@ export default {
 			}
 		}
 	}
+
 	&__logo {
 		background: transparent;
 		width: 30px;
 		height: 30px;
+	}
+
+	@media (max-width: 550px) {
+		display: none;
 	}
 }
 </style>
