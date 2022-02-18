@@ -28,7 +28,7 @@ export default {
     align-items: center;
     justify-content: center;
     position: absolute;
-    z-index: 10;
+    z-index: 999;
     width: 100%;
     height: 100%;
     margin-left: 120px;

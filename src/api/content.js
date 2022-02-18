@@ -5,5 +5,5 @@ export let apiMainTopics = function() {
 }
 
 export let apiMainTopicsNested = function(topicID) {
-    return axios.get('http://localhost:8563/api/v0/additional/${topicID}');
+    return axios.get(`http://localhost:8563/api/v0/additional/${topicID}`);
 }
